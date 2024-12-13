@@ -2,11 +2,6 @@
 #include <stdlib.h>
 #include "arvore.h"
 
-node *init()
-{
-    return NULL;
-}
-
 void inserir(node **r, int v)
 {
     if (*r == NULL)
@@ -25,14 +20,14 @@ void inserir(node **r, int v)
     }
 }
 
-void listar(node *r)
+void imprimir(node *r)
 {
     printf("<");
     if (r != NULL)
     {
         printf("%d", r->info);
-        listar(r->left);
-        listar(r->right);
+        imprimir(r->left);
+        imprimir(r->right);
     }
     printf(">");
 }
@@ -44,12 +39,24 @@ int busca_binaria(node **r, int v)
 
     if ((*r)->info == v)
         return 1;
+    else if ((*r)->info > v)
+        return busca_binaria(&(*r)->left, v);
+    else
+        return busca_binaria(&(*r)->right, v);
+}
+
+int altura(node *r)
+{
+    if (r == NULL)
+        return -1;
     else
     {
-        if ((*r)->info > v)
-            return busca_binaria(&(*r)->left, v);
+        int e = altura(r->left);
+        int d = altura(r->right);
+        if (e > d)
+            return e + 1;
         else
-            return busca_binaria(&(*r)->right, v);
+            return d + 1;
     }
 }
 

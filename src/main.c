@@ -4,13 +4,13 @@
 
 int main(void)
 {
-    node *tree = init();
+    node *tree = NULL; // Inicializando uma árvore vazia
     int v, opcao = 0;
 
     do
     {
         printf("O que você deseja fazer?\n");
-        printf("(1) Inserir elemento (2) Listar elementos (3) Buscar (4) Finalizar\n");
+        printf("(1) Inserir elemento (2) Listar elementos (3) Buscar (4) Altura da árvore (5) Finalizar\n");
         scanf("%d", &opcao);
         switch (opcao)
         {
@@ -20,7 +20,7 @@ int main(void)
             inserir(&tree, v);
             break;
         case 2:
-            listar(tree);
+            imprimir(tree);
             printf("\n");
             break;
         case 3:
@@ -32,13 +32,16 @@ int main(void)
                 printf("O elemento %d não está na árvore.\n\n", v);
             break;
         case 4:
+            printf("Altura da álvore: %d.\n", altura(tree));
+            break;
+        case 5:
             printf("Finalizando...\n");
             libera_arvore(&tree);
             break;
         default:
             printf("Por favor, digite uma opção válida.\n");
         }
-    } while (opcao != 4);
+    } while (opcao != 5);
 
     return 0;
 }

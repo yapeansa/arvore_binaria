@@ -9,17 +9,17 @@ typedef struct node
     struct node *right;
 } node;
 
-// Inicializando uma árvore vazia
-node *init(void);
-
 // Inserindo elementos na árvore
 void inserir(node **r, int v);
 
 // Listanto os elementos da árvore em ordem decrescente
-void listar(node *r);
+void imprimir(node *r);
 
 // Buscando elemento na árvore
 int busca_binaria(node **r, int v);
+
+// Altura da árvore
+int altura(node *r);
 
 // Função para liberar a árvore
 void libera_arvore(node **r);
