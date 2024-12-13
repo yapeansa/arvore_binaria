@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "arvore.h"
 
 int main(void)
@@ -35,13 +36,18 @@ int main(void)
             printf("Altura da álvore: %d.\n", altura(tree));
             break;
         case 5:
+            if (eh_balanceada(tree))
+                printf("Árvore balanceada.\n");
+            else
+                printf("Árvore NÃO balanceada.\n");
+        case 6:
             printf("Finalizando...\n");
             libera_arvore(&tree);
             break;
         default:
             printf("Por favor, digite uma opção válida.\n");
         }
-    } while (opcao != 5);
+    } while (opcao != 6);
 
     return 0;
 }

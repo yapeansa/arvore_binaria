@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "arvore.h"
 
 void inserir(node **r, int v)
@@ -58,6 +59,22 @@ int altura(node *r)
         else
             return d + 1;
     }
+}
+
+int cont(node *r)
+{
+    if (r != NULL)
+        return (cont(r->left) + cont(r->right) + 1);
+    else
+        return 0;
+}
+
+int eh_balanceada(node *r)
+{
+    if (altura(r) <= ceil(log(cont(r))))
+        return 1;
+    else
+        return 0;
 }
 
 void libera_arvore(node **r)

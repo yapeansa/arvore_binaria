@@ -21,6 +21,12 @@ int busca_binaria(node **r, int v);
 // Altura da árvore
 int altura(node *r);
 
+// Conta nó
+int cont(node *r);
+
+// Balanceamento
+int eh_balanceada(node *r);
+
 // Função para liberar a árvore
 void libera_arvore(node **r);
 
