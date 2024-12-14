@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include "arvore.h"
 
 int main(void)
@@ -11,7 +10,7 @@ int main(void)
     do
     {
         printf("O que você deseja fazer?\n");
-        printf("(1) Inserir elemento (2) Listar elementos (3) Buscar (4) Altura da árvore (5) Finalizar\n");
+        printf("(1) Inserir elemento (2) Listar elementos (3) Buscar (4) Altura da árvore (5) Balanceamento (6) Finalizar\n");
         scanf("%d", &opcao);
         switch (opcao)
         {
@@ -40,6 +39,7 @@ int main(void)
                 printf("Árvore balanceada.\n");
             else
                 printf("Árvore NÃO balanceada.\n");
+            break;
         case 6:
             printf("Finalizando...\n");
             libera_arvore(&tree);

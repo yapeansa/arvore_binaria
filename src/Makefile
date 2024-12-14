@@ -4,7 +4,7 @@ CC = gcc
 RM = rm -rf
 
 all:
-	$(CC) $(SOURCE) -o $(TARGET)
+	$(CC) $(SOURCE) -lm -o $(TARGET)
 run:
 	./$(TARGET)
 clean:

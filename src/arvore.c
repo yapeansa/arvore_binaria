@@ -69,9 +69,10 @@ int cont(node *r)
         return 0;
 }
 
+// Usar a flag -lm no compilador gcc para incluir a biblioteca matemática padrão
 int eh_balanceada(node *r)
 {
-    if (altura(r) <= ceil(log(cont(r))))
+    if (altura(r) >= ceil(log2(cont(r))))
         return 1;
     else
         return 0;
