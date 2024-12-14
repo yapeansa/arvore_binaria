@@ -9,8 +9,9 @@ int main(void)
 
     do
     {
-        printf("O que você deseja fazer?\n");
-        printf("(1) Inserir elemento (2) Listar elementos (3) Buscar (4) Altura da árvore (5) Balanceamento (6) Finalizar\n");
+        printf("MENU ÁRVORE\n");
+        printf("(1) Inserir elemento (2) Listar elementos\n(3) Buscar (4) Altura da árvore\n(5) Balanceamento (6) Finalizar\n");
+        printf("Escolha uma opção: ");
         scanf("%d", &opcao);
         switch (opcao)
         {
