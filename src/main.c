@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    node *tree = NULL; // Inicializando uma árvore vazia
+    node *root = NULL; // Inicializando uma árvore vazia
     int v, opcao = 0;
 
     do
@@ -18,32 +18,32 @@ int main(void)
         case 1:
             printf("Digite o elemento a inserir: ");
             scanf("%d", &v);
-            inserir(&tree, v);
+            inserir(&root, v);
             break;
         case 2:
-            imprimir(tree);
+            imprimir(root);
             printf("\n");
             break;
         case 3:
             printf("Digite o elemento que deseja buscar: ");
             scanf("%d", &v);
-            if (busca_binaria(&tree, v))
+            if (busca_binaria(&root, v))
                 printf("O elemento %d está na árvore.\n\n", v);
             else
                 printf("O elemento %d não está na árvore.\n\n", v);
             break;
         case 4:
-            printf("Altura da álvore: %d.\n", altura(tree));
+            printf("Altura da álvore: %d.\n", altura(root));
             break;
         case 5:
-            if (eh_balanceada(tree))
+            if (eh_balanceada(root))
                 printf("Árvore balanceada.\n");
             else
                 printf("Árvore NÃO balanceada.\n");
             break;
         case 6:
             printf("Finalizando...\n");
-            libera_arvore(&tree);
+            libera_arvore(&root);
             break;
         default:
             printf("Por favor, digite uma opção válida.\n");
