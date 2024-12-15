@@ -3,6 +3,13 @@
 #include <math.h>
 #include "arvore.h"
 
+void menu()
+{
+    printf("MENU ÁRVORE\n");
+    printf("(1) Inserir elemento (2) Listar elementos\n(3) Buscar (4) Altura da árvore\n(5) Balanceamento (6) Finalizar\n");
+    printf("Escolha uma opção: ");
+}
+
 void inserir(node **r, int v)
 {
     if (*r == NULL)

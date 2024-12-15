@@ -9,6 +9,9 @@ typedef struct node
     struct node *right;
 } node;
 
+// Interface do menu
+void menu();
+
 // Inserindo elementos na árvore
 void inserir(node **r, int v);
 
