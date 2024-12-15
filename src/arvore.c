@@ -24,7 +24,10 @@ void inserir(node **r, int v)
         if ((*r)->info > v)
             inserir(&(*r)->left, v);
         else
-            inserir(&(*r)->right, v);
+        {
+            if ((*r)->info != v)
+                inserir(&(*r)->right, v);
+        }
     }
 }
 
